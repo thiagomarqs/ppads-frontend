@@ -1,0 +1,13 @@
+{
+  "browser-games": [
+    {
+      "nome": "Billiards",
+      "categoria": "Casual",
+      "urlJogo": "https://www.clickjogos.com.br/Jogos-online/Esportes/Billiards",
+      "urlVideo": "Não há",
+      "descricao": "Jogo de sinuca muito divertido e simples.",
+      "urlImagem": "https://tcf.admeen.org/game/3000/2786/400x246/billiards-pool.jpg",
+      "id": 1
+    }
+  ]
+}
