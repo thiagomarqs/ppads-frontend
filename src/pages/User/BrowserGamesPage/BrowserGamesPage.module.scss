@@ -1,0 +1,29 @@
+.container {
+  padding: 50px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.info {
+  margin: 30px 0px;
+  display: flex;
+  padding: 25px;
+  box-shadow: 0 0 1em rgba(0, 0, 0, .2);
+  border-radius: 25px;
+  width: 1000px;
+}
+
+.description {
+  padding: 0 25px;
+  max-width: 80vw;
+}
+
+.reviews {
+  margin: 20px auto;
+  padding: 0 150px;
+}
+
+.media, .media > img {
+  max-width: 320px;
+}

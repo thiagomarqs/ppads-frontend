@@ -8,11 +8,14 @@ import { BrowserGamesPageFormState } from "./BrowserGamesPageFormState";
 import { BrowserGamesPageFormProps } from "./BrowserGamesPageFormProps";
 import { Button } from "../../../components/Button";
 import { ButtonProps } from "../../../components/Button/ButtonProps";
+import Select from 'react-select';
+import { CategoryService } from "../../../services/CategoryService";
 
 export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormProps, BrowserGamesPageFormState>{
 
   service = new BrowserGameService();
-
+  categoryService = new CategoryService();
+  
   constructor(props: {}) {
     super(props);
 
@@ -25,9 +28,18 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
       urlImagemIlustrativa: '',
       isSubmitted: false,
       returnToHome: false,
-      isLoading: true
+      isLoading: true,
+      categorias: [],
+      categoriasChoices: []
     }
+  }
 
+  selectOptions() {
+    return this.state.categoriasChoices.map(c => {return {label: c.nome, value: c.id}})
+  }
+
+  handleSelectChange(idCategoria: number) {
+    this.setState({idCategoria: idCategoria})
   }
 
   handleInputChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -40,25 +52,29 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
   }
 
   handleCreate(e: FormEvent) {
-    e.preventDefault();
-    const { 
-      nome, 
-      idCategoria, 
-      urlJogo, 
-      urlVideoDemonstracao, 
-      descricao, 
-      urlImagemIlustrativa 
-    } = this.state;
+  
+    if(document.querySelector('form')?.checkValidity()) {
+      const { 
+        nome, 
+        idCategoria, 
+        urlJogo, 
+        urlVideoDemonstracao, 
+        descricao, 
+        urlImagemIlustrativa 
+      } = this.state;
 
-    this.service.insertBrowserGames({
-      nome: nome, 
-      categoriaId: idCategoria, 
-      urlJogo: urlJogo, 
-      urlVideoDemonstracao: urlVideoDemonstracao, 
-      descricao: descricao, 
-      urlImagemIlustrativa: urlImagemIlustrativa,
-      ativo: true
-    }).then(() => this.setState({isSubmitted: true}));
+      this.service.insertBrowserGames({
+        nome: nome, 
+        categoriaId: idCategoria, 
+        urlJogo: urlJogo, 
+        urlVideoDemonstracao: urlVideoDemonstracao || '.', 
+        descricao: descricao, 
+        urlImagemIlustrativa: urlImagemIlustrativa,
+        ativo: true
+      })
+      .then(() => this.setState({isSubmitted: true}))
+      .catch((error) => console.error(error))
+    }
   }
 
   handleDelete(id: any) {
@@ -68,7 +84,7 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
   }
 
   handleUpdate (e: FormEvent) {
-    e.preventDefault();
+    //e.preventDefault();
     const { 
       nome, 
       idCategoria, 
@@ -78,22 +94,26 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
       urlImagemIlustrativa 
     } = this.state;
 
-    this.service.updateBrowserGame(this.props.id, {
+    this.service.updateBrowserGame((this.props.id as number), {
+      //@ts-ignore
+      id: this.props.id,
       nome: nome, 
       categoriaId: idCategoria, 
       urlJogo: urlJogo, 
       urlVideoDemonstracao: urlVideoDemonstracao, 
       descricao: descricao, 
       urlImagemIlustrativa: urlImagemIlustrativa 
-    }).then(() => this.setState({isSubmitted: true}));
+    })
+    .then(() => this.setState({isSubmitted: true}))
+    .catch((error) => console.error(error))
   }
-
 
   loadBrowserGame(id: any) {
     this.service.getBrowserGame(id)
       .then(response => response.data.data)
       .then(data => {
         this.setState({isLoading: false});
+        //@ts-ignore
         this.setState({...data})
       })
   }
@@ -102,7 +122,7 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
     
     const buttons = [
       {className:'btn btn-secondary', message: 'Cancelar', link: `/admin/${AdminPaths.BROWSER_GAMES}`},
-      {className:'btn btn-success', message: 'Adicionar', 'onClick': () => {}}
+      {className:'btn btn-success', message: 'Adicionar', 'onClick': (e: React.FormEvent) => {this.handleCreate(e)}}
     ]
 
     return(
@@ -155,14 +175,14 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
             type="text"  
             required= {true}
             onChange={(e) => this.handleInputChange(e)} /> ,
-          <Input 
-            className="form-control" 
-            id="idCategoria"  
-            value={this.state.idCategoria} 
-            placeholder="Categoria"  
-            type="text"  
-            required= {true}
-            onChange={(e) => this.handleInputChange(e)} /> ,
+          <Select 
+            //@ts-ignore
+            options={this.selectOptions()}
+            placeholder="Categoria"
+            //@ts-ignore
+            onChange={option => this.handleSelectChange(option.value)}
+            defaultValue={this.state.idCategoria}
+          ></Select>,
           <Input 
             className="form-control" 
             id="urlJogo"  
@@ -210,5 +230,11 @@ export class BrowserGamesPageForm extends React.Component<BrowserGamesPageFormPr
 
   componentDidMount() {
     if(this.props.isEditing) this.loadBrowserGame(this.props.id);
+    this.categoryService.getAllCategories()
+      .then(r => {
+        this.setState({categoriasChoices: r.data.data});
+        console.log(this.state.categoriasChoices);
+      });
+    
   }
 }

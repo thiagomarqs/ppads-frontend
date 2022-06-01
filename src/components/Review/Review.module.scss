@@ -1,0 +1,37 @@
+.reviewContainer {
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 15px 0;
+}
+
+.reviewContainer:hover {
+  cursor: pointer;
+  transition: 0.5s background-color;
+  background-color: hsl(1deg, 1%, 85%);
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+.likeButton {
+  background-color: #82b3fe;
+}
+
+.likeButton:active {
+  background-color: #0B5ED7;
+}
+
+.likeButton:focus {
+  background-color: #052659;
+}
+
+.likesCounter {
+  margin-right: 10px;
+  color: #0B5ED7;
+  font-size: 1em;
+  font-weight: bolder;
+}

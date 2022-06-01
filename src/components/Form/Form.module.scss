@@ -2,5 +2,7 @@
     background: #eeeeee;
     padding: 15px;
     border-radius: 5px;
-    width: 50%;
+    max-width: 1000px;
+    min-width: 500px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, .2);
 }

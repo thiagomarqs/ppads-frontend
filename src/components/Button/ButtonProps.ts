@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 
 export interface ButtonProps {
     key?: React.Key;
     className: string;
     message: string;
-    onClick?: () => void;
+    onClick?: React.MouseEventHandler;
     link?: string;
 }

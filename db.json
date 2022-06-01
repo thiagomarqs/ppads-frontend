@@ -1,13 +1,146 @@
 {
-  "browser-games": [
+  "browserGames": [
+    {
+      "nome": "Billiards",
+      "categoria": "Casual",
+      "idCategoria": 1,
+      "urlJogo": "https://www.clickjogos.com.br/Jogos-online/Esportes/Billiards",
+      "urlVideoDemonstracao": "https://www.youtube.com/watch?v=-mtGli94R9g",
+      "descricao": "Jogo de sinuca muito divertido e simples.",
+      "urlImagemIlustrativa": "https://tcf.admeen.org/game/3000/2786/400x246/billiards-pool.jpg",
+      "id": 1
+    },
+    {
+      "nome": "Super Mario",
+      "categoria": "Aventura",
+      "idCategoria": 2,
+      "urlJogo": "https://puu.sh/bola",
+      "urlVideoDemonstracao": "",
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non imperdiet nunc, at cursus libero. Quisque dictum dolor non metus malesuada, eu interdum sapien porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum augue congue ligula tincidunt, vel congue arcu ullamcorper. Mauris blandit magna vel auctor pulvinar. Donec blandit facilisis neque placerat sodales. Ut in metus magna. Nullam non lacinia turpis. Suspendisse nisi est, placerat id gravida sed, maximus ut enim. Praesent convallis ipsum eget turpis egestas, ac vehicula eros pellentesque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam scelerisque sapien et porttitor gravida. Integer in iaculis ipsum. Pellentesque ac egestas odio, in suscipit ipsum. Nulla eleifend placerat quam, ac vestibulum leo accumsan vitae. Donec a magna id odio bibendum pulvinar euismod eget dui. Pellentesque quis dolor non lectus mollis rhoncus. Aenean pharetra libero vitae nisi finibus, eu placerat felis commodo. In hac habitasse platea dictumst. Curabitur quis risus sit amet urna feugiat commodo. Vestibulum eu enim rutrum, ornare turpis sed, ornare mauris. Curabitur id nunc neque. Phasellus id neque nibh. Phasellus ante dui, tincidunt ut purus pharetra, lacinia sollicitudin purus. Vivamus laoreet tincidunt tortor et cursus. Pellentesque consequat malesuada lorem non fringilla.",
+      "urlImagemIlustrativa": "https://upload.wikimedia.org/wikipedia/pt/7/7b/Super_Mario_64_front.jpg",
+      "id": 2
+    },
+    {
+      "nome": "GTA 2",
+      "categoria": "Ação",
+      "idCategoria": 3,
+      "urlJogo": "https://puu.sh/bola",
+      "urlVideoDemonstracao": "https://www.youtube.com/watch?v=Z9ZZX1uO7Hg",
+      "descricao": "Clássico título da franquia Grand Theft Auto.",
+      "urlImagemIlustrativa": "https://i.ytimg.com/vi/3FzriRcKwjg/maxresdefault.jpg",
+      "id": 3
+    },
+    {
+      "nome": "Bob Esponja",
+      "categoria": "Aventura",
+      "idCategoria": 2,
+      "urlJogo": "https://puu.sh/bola",
+      "urlVideoDemonstracao": "https://www.youtube.com/watch?v=veF3k7fRc_I",
+      "descricao": "Jogo do Bob Esponja",
+      "urlImagemIlustrativa": "https://m.media-amazon.com/images/M/MV5BNDUwNjBkMmUtZjM2My00NmM4LTlmOWQtNWE5YTdmN2Y2MTgxXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_QL75_UX500_CR0,0,500,281_.jpg",
+      "id": 4
+    }
+  ],
+
+  "categorias": [
+    {
+      "nome": "Casual",
+      "ativo": "Sim",
+      "id": 1
+    },
+    {
+      "nome": "Aventura",
+      "ativo": "Sim",
+      "id": 2
+    },
+    {
+      "nome": "Ação",
+      "ativo": "Sim",
+      "id": 3
+    }
+  ],
+
+  "users": [
+    {
+      "username": "teste@email.com",
+      "senha": "teste123"
+    }
+  ],
+
+  "recommended": [
     {
       "nome": "Billiards",
       "categoria": "Casual",
       "urlJogo": "https://www.clickjogos.com.br/Jogos-online/Esportes/Billiards",
-      "urlVideo": "Não há",
+      "urlVideo": "https://www.youtube.com/watch?v=-mtGli94R9g",
       "descricao": "Jogo de sinuca muito divertido e simples.",
       "urlImagem": "https://tcf.admeen.org/game/3000/2786/400x246/billiards-pool.jpg",
       "id": 1
+    },
+    {
+      "nome": "Super Mario",
+      "categoria": "Aventura",
+      "urlJogo": "https://puu.sh/bola",
+      "urlVideo": "https://www.youtube.com/watch?v=mHBfzdUC2EU",
+      "descricao": "Jogo do Super Mario",
+      "urlImagem": "https://upload.wikimedia.org/wikipedia/pt/7/7b/Super_Mario_64_front.jpg",
+      "id": 2
+    },
+    {
+      "nome": "GTA 2",
+      "categoria": "Ação",
+      "urlJogo": "https://puu.sh/bola",
+      "urlVideo": "https://www.youtube.com/watch?v=Z9ZZX1uO7Hg",
+      "descricao": "Clássico título da franquia Grand Theft Auto.",
+      "urlImagem": "https://i.ytimg.com/vi/3FzriRcKwjg/maxresdefault.jpg",
+      "id": 3
+    },
+    {
+      "nome": "Bob Esponja",
+      "categoria": "Aventura",
+      "urlJogo": "https://puu.sh/bola",
+      "urlVideo": "https://www.youtube.com/watch?v=veF3k7fRc_I",
+      "descricao": "Jogo do Bob Esponja",
+      "urlImagem": "https://m.media-amazon.com/images/M/MV5BNDUwNjBkMmUtZjM2My00NmM4LTlmOWQtNWE5YTdmN2Y2MTgxXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_QL75_UX500_CR0,0,500,281_.jpg",
+      "id": 4
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": 3,
+      "rating": 3,
+      "reviewer": "José das Couves",
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam non orci pharetra semper. Quisque ipsum ante, luctus in felis id, ornare vestibulum lectus. Praesent vehicula efficitur lectus at rutrum.",
+      "likes": 87
+    },
+    {
+      "id": 1,
+      "rating": 3,
+      "reviewer": "José das Couves",
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam non orci pharetra semper. Quisque ipsum ante, luctus in felis id, ornare vestibulum lectus. Praesent vehicula efficitur lectus at rutrum.",
+      "likes": 87
+    },
+    {
+      "id": 2,
+      "rating": 3,
+      "reviewer": "José das Couves",
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam non orci pharetra semper. Quisque ipsum ante, luctus in felis id, ornare vestibulum lectus. Praesent vehicula efficitur lectus at rutrum.",
+      "likes": 87
+    },
+    {
+      "id": 4,
+      "rating": 3,
+      "reviewer": "José das Couves",
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam non orci pharetra semper. Quisque ipsum ante, luctus in felis id, ornare vestibulum lectus. Praesent vehicula efficitur lectus at rutrum.",
+      "likes": 87
+    },
+    {
+      "id": 5,
+      "rating": 3,
+      "reviewer": "José das Couves",
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam non orci pharetra semper. Quisque ipsum ante, luctus in felis id, ornare vestibulum lectus. Praesent vehicula efficitur lectus at rutrum.",
+      "likes": 87
     }
   ]
 }

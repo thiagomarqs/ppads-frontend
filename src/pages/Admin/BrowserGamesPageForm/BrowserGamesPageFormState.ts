@@ -8,4 +8,6 @@ export interface BrowserGamesPageFormState {
   isSubmitted: boolean;
   returnToHome?: boolean;
   isLoading?: boolean;
+  categorias: any[];
+  categoriasChoices: any[];
 }

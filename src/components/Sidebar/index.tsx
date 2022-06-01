@@ -10,7 +10,7 @@ class Sidebar extends React.Component<SidebarProps> {
     render() {
         return (
             <div className={styles['sidebar']}>
-                <UserInfo imageLink="https://via.placeholder.com/150" userDisplayName="Fulano de Tal"/>
+                <UserInfo imageLink="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" userDisplayName={sessionStorage.getItem('userName') || 'Usuário'}/>
                 <List items={this.props.listItems} />
             </div>
         )

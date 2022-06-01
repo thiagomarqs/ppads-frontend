@@ -6,5 +6,10 @@ export enum AdminPaths {
   BROWSER_GAMES_EDIT = 'browser-games/edit',
   BROWSER_GAMES_EDIT_ID = 'browser-games/edit/:id',
   BROWSER_GAMES_DELETE = 'browser-games/delete',
-  BROWSER_GAMES_DELETE_ID = 'browser-games/delete/:id'
+  BROWSER_GAMES_DELETE_ID = 'browser-games/delete/:id',
+  CATEGORIA_NEW = 'categorias/new',
+  CATEGORIA_EDIT_ID = 'categorias/edit/:id',
+  CATEGORIA_DELETE_ID = 'categorias/delete/:id',
+  CATEGORIA_EDIT = 'categorias/edit',
+  CATEGORIA_DELETE = 'categorias/delete',
 }

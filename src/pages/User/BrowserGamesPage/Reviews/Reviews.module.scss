@@ -1,0 +1,57 @@
+.reviews {
+  margin-top: 40px;
+  margin-bottom: 150px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  margin: 25px auto;
+
+  button:hover {
+    transition: .25s;    
+    background-color: #0B5ED7;
+    color: white;
+  }
+}
+
+.reviewForm {
+  transition: 2s;
+  // transition-property: height;
+  position: relative;
+  margin: 50px 0;
+}
+
+.showReviewForm {
+  display: block;
+}
+
+.hideReviewForm {
+  display: none;
+}
+
+
+
+.showEditReviewForm {
+  display: block;
+}
+
+.hideEditReviewForm {
+  display: none;
+}
+
+.editReviewForm {
+  transition: 2s;
+  // transition-property: height;
+  position: relative;
+  margin: 50px 0;
+}
+
+input, textarea {
+  margin: 10px 0;
+}
+
+.rating {
+  width: fit-content;
+  margin-left: 0px;
+}

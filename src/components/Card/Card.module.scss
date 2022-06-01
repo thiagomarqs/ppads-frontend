@@ -1,0 +1,26 @@
+.cardContainer {
+  display: flex;
+  padding: 10px;
+  margin: 20px 0px;
+  border-radius: 10px;
+  background-color: hsl(1, 1, 95);
+  max-width: 800px;
+}
+
+.cardContainer:hover {
+  cursor: pointer;
+  transition: 0.5s background-color;
+  background-color: hsl(1, 1, 85);
+}
+
+.cardImage {
+  margin: 0 10px;
+  img {
+    border-radius: 15px;
+    max-width: 200px;
+  }
+}
+
+.cardInfo {
+  padding: 10px;
+}
